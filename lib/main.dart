@@ -7,10 +7,9 @@ class PFCBalance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xFF48b0c7),
-        scaffoldBackgroundColor: Color(0xFFf7e3da),
-        accentColor: Color(0xFF17517e),
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0a0e21),
+        scaffoldBackgroundColor: Color(0xFF0a0e21),
       ),
       home: InputPage(),
     );
