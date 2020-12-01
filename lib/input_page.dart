@@ -3,14 +3,10 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pfc_balance_app/results_page.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
-
-const kBottomContainerHeight = 80.0;
-const kActiveCardColour = Color(0xFF1d1e33);
-const kInactiveCardColour = Color(0xFF111328);
-const kBottomContainerColour = Color(0xFFeb1555);
 
 enum Gender {
   male,
@@ -239,11 +235,18 @@ class _InputPageState extends State<InputPage> {
               ),
             ],
           )),
-          Container(
-            color: kBottomContainerColour,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultsPage()));
+            },
+            child: Container(
+              child: Text('計算する'),
+              color: kBottomContainerColour,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: kBottomContainerHeight,
+            ),
           ),
         ],
       ),
